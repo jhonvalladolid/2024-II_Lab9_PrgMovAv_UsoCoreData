@@ -12,14 +12,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     
     var tareas:[Tarea] = []
-    var indexSeleccionado: Int = 0
+    //var indexSeleccionado: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         
-        tareas = crearTareas()
+        //tareas = crearTareas()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,14 +31,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let tarea = tareas[indexPath.row]
         
         if tarea.importante {
-            cell.textLabel?.text = "😊 \(tarea.nombre)"
+            cell.textLabel?.text = "😊 \(tarea.nombre!)"
         } else {
-            cell.textLabel?.text = "😕 \(tarea.nombre)"
+            cell.textLabel?.text = "😕 \(tarea.nombre!)"
         }
         
         return cell
     }
 
+    /*
     func crearTareas() -> [Tarea] {
         let tarea1 = Tarea()
         tarea1.nombre = "Estudiar para el examen"
@@ -54,25 +55,43 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         return [tarea1, tarea2, tarea3]
     }
+     */
     
     @IBAction func agregarTarea(_ sender: Any) {
         performSegue(withIdentifier: "agregarSegue", sender: nil)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        indexSeleccionado = indexPath.row
+        //indexSeleccionado = indexPath.row
         let tarea = tareas[indexPath.row]
         performSegue(withIdentifier: "tareaSeleccionadaSegue", sender: tarea)
     }
     
+    func obtenerTareas() {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        do {
+            tareas = try context.fetch(Tarea.fetchRequest()) as! [Tarea]
+        } catch {
+            print("Error al leer entidad de CoreData")
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        obtenerTareas()
+        tableView.reloadData()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        /*
         if segue.identifier == "agregarSegue" {
             let siguienteVC = segue.destination as! ViewControllerCrearTarea
             siguienteVC.anteriorVC = self
-        }else if (segue.identifier == "tareaSeleccionadaSegue"){
+        }
+         */
+        if (segue.identifier == "tareaSeleccionadaSegue"){
             let siguienteVC = segue.destination as! ViewControllerTareaCompletada
             siguienteVC.tarea = sender as! Tarea
-            siguienteVC.anteriorVC = self
+            //siguienteVC.anteriorVC = self
         }
     }
 }

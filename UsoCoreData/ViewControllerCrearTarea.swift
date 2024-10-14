@@ -21,12 +21,17 @@ class ViewControllerCrearTarea: UIViewController {
     }
     
     @IBAction func agregar(_ sender: Any) {
-        let tarea = Tarea()
+        //let tarea = Tarea()
+        // Se apertura uso de persistencia
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let tarea = Tarea(context: context)
         tarea.nombre = txtNombreTarea.text!
         tarea.importante = swImportante.isOn
         
-        anteriorVC.tareas.append(tarea)
-        anteriorVC.tableView.reloadData()
+        //Se guarda el dato agregado a la entidad Tarea
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        //anteriorVC.tareas.append(tarea)
+        //anteriorVC.tableView.reloadData()
         navigationController?.popViewController(animated: true)
     }
     
