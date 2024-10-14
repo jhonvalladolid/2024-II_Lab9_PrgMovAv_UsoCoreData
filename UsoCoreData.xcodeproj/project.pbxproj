@@ -16,6 +16,7 @@
 		FB65D6052CBD6ECF009DD4B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB65D6032CBD6ECF009DD4B5 /* LaunchScreen.storyboard */; };
 		FB65D60D2CBD7067009DD4B5 /* Tarea.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB65D60C2CBD7067009DD4B5 /* Tarea.swift */; };
 		FB65D60F2CBD7903009DD4B5 /* ViewControllerCrearTarea.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB65D60E2CBD7903009DD4B5 /* ViewControllerCrearTarea.swift */; };
+		FBEA3A342CBD7E71002118BC /* ViewControllerTareaCompletada.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEA3A332CBD7E71002118BC /* ViewControllerTareaCompletada.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FB65D6062CBD6ECF009DD4B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB65D60C2CBD7067009DD4B5 /* Tarea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tarea.swift; sourceTree = "<group>"; };
 		FB65D60E2CBD7903009DD4B5 /* ViewControllerCrearTarea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCrearTarea.swift; sourceTree = "<group>"; };
+		FBEA3A332CBD7E71002118BC /* ViewControllerTareaCompletada.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTareaCompletada.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				FB65D5F72CBD6ECE009DD4B5 /* SceneDelegate.swift */,
 				FB65D5F92CBD6ECE009DD4B5 /* ViewController.swift */,
 				FB65D60E2CBD7903009DD4B5 /* ViewControllerCrearTarea.swift */,
+				FBEA3A332CBD7E71002118BC /* ViewControllerTareaCompletada.swift */,
 				FB65D5FB2CBD6ECE009DD4B5 /* Main.storyboard */,
 				FB65D60C2CBD7067009DD4B5 /* Tarea.swift */,
 				FB65D6012CBD6ECF009DD4B5 /* Assets.xcassets */,
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB65D5FA2CBD6ECE009DD4B5 /* ViewController.swift in Sources */,
+				FBEA3A342CBD7E71002118BC /* ViewControllerTareaCompletada.swift in Sources */,
 				FB65D5F62CBD6ECE009DD4B5 /* AppDelegate.swift in Sources */,
 				FB65D6002CBD6ECE009DD4B5 /* UsoCoreData.xcdatamodeld in Sources */,
 				FB65D5F82CBD6ECE009DD4B5 /* SceneDelegate.swift in Sources */,

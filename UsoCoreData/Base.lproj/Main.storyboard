@@ -41,7 +41,7 @@
                     <connections>
                         <outlet property="tableView" destination="5gj-VD-56t" id="yD3-OM-4ww"/>
                         <segue destination="ClW-mL-L86" kind="show" identifier="agregarSegue" id="HN0-9c-XSu"/>
-                        <segue destination="aJk-OD-Rip" kind="show" id="PPA-u2-Fqx"/>
+                        <segue destination="aJk-OD-Rip" kind="show" identifier="tareaSeleccionadaSegue" id="PPA-u2-Fqx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -111,17 +111,42 @@
             </objects>
             <point key="canvasLocation" x="1946" y="-339"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller Tarea Completada-->
         <scene sceneID="jmK-R1-wy6">
             <objects>
-                <viewController id="aJk-OD-Rip" sceneMemberID="viewController">
+                <viewController id="aJk-OD-Rip" customClass="ViewControllerTareaCompletada" customModule="UsoCoreData" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="APg-mt-ciD">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Zv-EY-kdL">
+                                <rect key="frame" x="167" y="123" width="59" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="APi-Eh-wyn">
+                                <rect key="frame" x="135.66666666666666" y="173" width="121.99999999999997" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Completado!"/>
+                                <connections>
+                                    <action selector="completarTarea:" destination="aJk-OD-Rip" eventType="touchUpInside" id="i8w-oc-C1B"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="kyq-dy-gHS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1Zv-EY-kdL" firstAttribute="top" secondItem="kyq-dy-gHS" secondAttribute="top" constant="20" id="KEw-nl-gZJ"/>
+                            <constraint firstItem="APi-Eh-wyn" firstAttribute="centerX" secondItem="APg-mt-ciD" secondAttribute="centerX" id="cre-dD-IzG"/>
+                            <constraint firstItem="APi-Eh-wyn" firstAttribute="top" secondItem="1Zv-EY-kdL" secondAttribute="bottom" constant="20" id="mNO-1U-kxj"/>
+                            <constraint firstItem="1Zv-EY-kdL" firstAttribute="centerX" secondItem="APg-mt-ciD" secondAttribute="centerX" id="oT0-0r-aHi"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6Up-Zk-EEJ"/>
+                    <connections>
+                        <outlet property="tareaLabel" destination="1Zv-EY-kdL" id="FNC-T9-mQ2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zuE-aa-Pmu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
